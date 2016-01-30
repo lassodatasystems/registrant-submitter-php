@@ -1,71 +1,122 @@
 <?php
 
-/*
+/**
  * This class is used to format data into the Lasso Lead
  */
 class LassoLead
 {
-  /*
-   * String the first name of the lead.
+  /**
+   * @var String the first name of the lead.
    */
   private $firstName;
 
-  /*
-   * String the last name of the lead.
+  /**
+   * @var String the last name of the lead.
    */
   private $lastName;
 
-  /*
-   * String the clients id from Lasso.
+  /**
+   * @var String the clients id from Lasso.
    */
   private $clientId;
 
-  /*
-   * Array the project ids (integers) of Lasso projects that the lead
+  /**
+   * @var Array|int[] the project ids of Lasso projects that the lead
    * should be entered into.
    */
   private $projectIds = [];
 
-  /*
-   * Array the email objects
+  /**
+   * @var Array the email objects
    * {
-       email: 'person@example.com',
-       type: 'Home',
-       primary: true
-     }
+   *   email: 'person@example.com',
+   *   type: 'Home',
+   *   primary: true
+   * }
    */
   private $emails = [];
 
-  /*
-   * String the rating the registrant should be entered with
+  /**
+   * @var Array the phone objects
+   * {
+   *   phone: '123 456 7890',
+   *   type: 'Mobile',
+   *   primary: true
+   * }
+   */
+  private $phones = [];
+
+  /**
+   * @var Array the question objects
+   * {
+   *   id: '110',
+   *   path: '/questions',
+   *   name: 'Your Question',
+   *   answers: {
+   *              id: '220',
+   *              text: 'My Answer'
+   *            }
+   * }
+   */
+  private $questions = [];
+
+  /**
+   * @var Array the address objects
+   * {
+   *   address: '123 Street',
+   *   city: 'Vancouver',
+   *   country: 'Canada',
+   *   province: 'BC',
+   *   postalCode: 'V1V1V1',
+   *   type: 'Home',
+   *   primary: true
+   * }
+   */
+  private $addresses;
+
+  /**
+   * String $rating
    */
   private $rating = 'N';
 
-  /*
-   * String the source type the registrant should be entered with
+  /**
+   * String $sourceType
    */
-  private $sourceType = 'website';
+  private $sourceType = 'Online Registration';
 
+  /**
+   * @param String $firstName
+   */
   public function setFirstName($firstName) {
     $this->firstName = $firstName;
   }
 
+  /**
+   * @param String $lastName
+   */
   public function setLastName($lastName) {
     $this->lastName = $lastName;
   }
 
+  /**
+   * @param Integer $clientId
+   */
   public function setClient($clientId) {
     $this->clientId = $clientId;
   }
 
-  public function addProject($project_id) {
-    $this->projectIds[] = $project_id;
+  /**
+   * @param Integer $projectId
+   */
+  public function addProject($projectId) {
+    $this->projectIds[] = $projectId;
   }
 
-  public function setLassoUid($lasso_uid) {
-    $this->lasso_uid = $lasso_uid;
-  }
-
+  /**
+   * @param String $email
+   * @param String $type
+   * @param Boolean $primary
+   */
   public function addEmail($email, $type = 'Home', $primary = true) {
     $this->emails[] = [
       'email' => $email,
@@ -74,22 +125,85 @@ class LassoLead
     ];
   }
 
+  /**
+   * @param String $phone
+   * @param String $type
+   * @param Boolean $primary
+   */
+  public function addPhone($phone, $type = 'Mobile', $primary = true) {
+    $this->phones[] = [
+      'phone' => $phone,
+      'type' => $type,
+      'primary' => $primary
+    ];
+  }
+
+  /**
+   * @param String $address unit number
+   * @param String $city
+   * @param String $state state/province
+   * @param String $zip zip/postal code
+   * @param String $country
+   * @param String $type
+   * @param Boolean $primary
+   */
+  public function addAddress($address, $city, $state, $zip, $country, $type = 'Home', $primary = true) {
+    $this->addresses[] = [
+      'address' => $address,
+      'city' => $city,
+      'country' => $country,
+      'province' => $state,
+      'postalCode' => $state,
+      'type' => $type,
+      'primary' => $primary
+    ];
+  }
+
+  /**
+   * @param String $path folder structure
+   * @param String $question
+   * @param Mixed String|Array
+   */
+  public function addQuestion($path, $question, $answer) {
+    $answers = is_array($answer) ? $answer : [['id' => '', 'text' => $answer]];
+    $this->questions[] = [
+      'id' => '',
+      'path' => $path,
+      'name' => $question,
+      'answers' => $answers
+    ];
+  }
+
+  /**
+   * @param String $rating
+   */
   public function setRating($rating) {
       $this->rating = $rating;
   }
 
+  /**
+   * @param String $sourceType
+   */
   public function setSourceType($sourceType) {
       $this->sourceType = $sourceType;
   }
 
-  public function __construct($first_name, $last_name, $project_id, $client_id, $lasso_uid) {
-    $this->setFirstName($first_name);
-    $this->setLastName($last_name);
-    $this->setClient($client_id);
-    $this->setLassoUid($lasso_uid);
-    $this->addProject($project_id);
+  /**
+   * @param String $firstName
+   * @param String $lastName
+   * @param Integer $projectId
+   * @param Integer $clientId
+   */
+  public function __construct($firstName, $lastName, $projectId, $clientId) {
+    $this->setFirstName($firstName);
+    $this->setLastName($lastName);
+    $this->setClient($clientId);
+    $this->addProject($projectId);
   }
 
+  /**
+   * @return array
+   */
   public function toArray() {
     return get_object_vars($this);
   }

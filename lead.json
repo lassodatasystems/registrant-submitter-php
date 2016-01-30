@@ -1,0 +1,54 @@
+{
+ "firstName":"Test",
+ "lastName":"Registrant",
+ "clientId":"",
+ "projectIds":[""],
+ "emails":[
+    {
+     "email":"test_reg@mylasso.com",
+     "type":"Home",
+     "primary":true
+    }
+ ],
+ "phones":[
+   {
+    "phone":"123 456 7890",
+    "type":"Mobile",
+    "primary":true
+   }
+ ],
+ "rating":"N",
+ "sourceType":"Online Registration",
+ "addresses":[
+   {
+    "address":"350 Fifth Avenue",
+    "city":"New York",
+    "country":"USA",
+    "province":"NY",
+    "postalCode":"NY",
+    "type":"Home",
+    "primary":true
+   }
+ ],
+ "questions":[
+    {
+      "id":1,
+      "path":"",
+      "name":"t-bar",
+      "answers":[
+
+      ]
+    },
+    {
+      "id":0,
+      "path":"projectname/survey/",
+      "name":"do you like us?",
+      "answers":[
+        {
+        "id":"x",
+        "text":"Yes"
+        }
+      ]
+    }
+  ]
+}
