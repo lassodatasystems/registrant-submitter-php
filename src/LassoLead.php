@@ -153,7 +153,7 @@ class LassoLead
       'city' => $city,
       'country' => $country,
       'province' => $state,
-      'postalCode' => $state,
+      'postalCode' => $zip,
       'type' => $type,
       'primary' => $primary
     ];
