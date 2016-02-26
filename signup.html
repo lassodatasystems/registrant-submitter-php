@@ -18,11 +18,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script type = 'text/javascript'>
       var register = function() {
-          var first_name = document.getElementById('first_name').value;
-          var last_name = document.getElementById('last_name').value;
-          var email = document.getElementById('email').value;
-          var phone = document.getElementById('phone').value;
-
           jQuery.ajax({
             type: "POST",
             url: 'http://app.andrew.mylasso.com/registration/signup.php',
