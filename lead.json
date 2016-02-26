@@ -17,6 +17,7 @@
     "primary":true
    }
  ],
+ "notes":["This is a test note"],
  "rating":"N",
  "sourceType":"Online Registration",
  "addresses":[
