@@ -72,7 +72,7 @@ class LassoLead
    *   primary: true
    * }
    */
-  private $addresses;
+  private $addresses = [];
 
   /**
    * String $rating
