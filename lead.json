@@ -20,6 +20,7 @@
  "notes":["This is a test note"],
  "rating":"N",
  "sourceType":"Online Registration",
+ "contactPreference":"Any",
  "addresses":[
    {
     "address":"350 Fifth Avenue",
