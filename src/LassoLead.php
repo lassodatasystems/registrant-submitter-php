@@ -24,7 +24,7 @@ class LassoLead
    * @var Array|int[] the project ids of Lasso projects that the lead
    * should be entered into.
    */
-  private $projectIds = [];
+  private $projectIds = array();
 
   /**
    * @var Array the email objects
@@ -34,7 +34,7 @@ class LassoLead
    *   primary: true
    * }
    */
-  private $emails = [];
+  private $emails = array();
 
   /**
    * @var Array the phone objects
@@ -44,7 +44,7 @@ class LassoLead
    *   primary: true
    * }
    */
-  private $phones = [];
+  private $phones = array();
 
   /**
    * @var Array the question objects
@@ -58,7 +58,7 @@ class LassoLead
    *            }
    * }
    */
-  private $questions = [];
+  private $questions = array();
 
   /**
    * @var Array the address objects
@@ -72,7 +72,7 @@ class LassoLead
    *   primary: true
    * }
    */
-  private $addresses = [];
+  private $addresses = array();
 
   /**
    * String $rating
@@ -118,11 +118,11 @@ class LassoLead
    * @param Boolean $primary
    */
   public function addEmail($email, $type = 'Home', $primary = true) {
-    $this->emails[] = [
+    $this->emails[] = array(
       'email' => $email,
       'type' => $type,
       'primary' => $primary
-    ];
+    );
   }
 
   /**
@@ -131,11 +131,11 @@ class LassoLead
    * @param Boolean $primary
    */
   public function addPhone($phone, $type = 'Mobile', $primary = true) {
-    $this->phones[] = [
+    $this->phones[] = array(
       'phone' => $phone,
       'type' => $type,
       'primary' => $primary
-    ];
+    );
   }
 
   /**
@@ -148,7 +148,7 @@ class LassoLead
    * @param Boolean $primary
    */
   public function addAddress($address, $city, $state, $zip, $country, $type = 'Home', $primary = true) {
-    $this->addresses[] = [
+    $this->addresses[] = array(
       'address' => $address,
       'city' => $city,
       'country' => $country,
@@ -156,7 +156,7 @@ class LassoLead
       'postalCode' => $zip,
       'type' => $type,
       'primary' => $primary
-    ];
+    );
   }
 
   /**
@@ -165,13 +165,13 @@ class LassoLead
    * @param Mixed String|Array
    */
   public function addQuestion($path, $question, $answer) {
-    $answers = is_array($answer) ? $answer : [['id' => '', 'text' => $answer]];
-    $this->questions[] = [
+    $answers = is_array($answer) ? $answer : array(array('id' => '', 'text' => $answer));
+    $this->questions[] = array(
       'id' => '',
       'path' => $path,
       'name' => $question,
       'answers' => $answers
-    ];
+    );
   }
 
   /**
