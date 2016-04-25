@@ -40,7 +40,7 @@ $lead->setRating('N');
 $lead->addQuestion('\TheProject\Registration', 'How Heard', 'Newsletter');
 
 $submitter = new RegistrantSubmitter();
-$curl      = $submitter->submit('http://api.mylasso.com/registrants', $lead, $apiKey);
+$curl      = $submitter->submit('https://api.lassocrm.com/registrants', $lead, $apiKey);
 
 /*
  * ---------------------------------------------------------------
