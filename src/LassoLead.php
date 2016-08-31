@@ -85,6 +85,11 @@ class LassoLead
   private $sourceType = 'Online Registration';
 
   /**
+   * String $followUpProcess
+   */
+  private $followUpProcess = '';
+
+  /**
    * @param String $firstName
    */
   public function setFirstName($firstName) {
@@ -186,6 +191,13 @@ class LassoLead
    */
   public function setSourceType($sourceType) {
       $this->sourceType = $sourceType;
+  }
+
+  /**
+   * @param String $followUpProcess
+   */
+  public function setFollowUpProcess($followUpProcess) {
+      $this->followUpProcess = $followUpProcess;
   }
 
   /**
