@@ -37,6 +37,7 @@ $lead->addAddress($_REQUEST['address'],
     $_REQUEST['postal'],
     $_REQUEST['country']);
 $lead->setRating('N');
+$lead->setSendSalesRepAssignmentNotification(true);
 $lead->addQuestion('\TheProject\Registration', 'How Heard', 'Newsletter');
 
 $submitter = new RegistrantSubmitter();
