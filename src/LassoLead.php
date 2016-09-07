@@ -206,13 +206,10 @@ class LassoLead
   }
 
   /**
-   * Setting this to true will trigger an email notification to be sent to the assigned sales rep(s)
-   * upon successful registration.
-   *
-   * @param bool $sendSalesRepAssignmentNotification
+   * Trigger an email notification to be sent to the assigned sales rep(s) upon successful registration.
    */
-  public function setSendSalesRepAssignmentNotification($sendSalesRepAssignmentNotification = true) {
-      $this->sendSalesRepAssignmentNotification = $sendSalesRepAssignmentNotification;
+  public function sendAssignmentNotification() {
+      $this->sendSalesRepAssignmentNotification = true;
   }
 
   /**
