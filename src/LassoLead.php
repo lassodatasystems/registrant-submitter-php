@@ -92,7 +92,7 @@ class LassoLead
   /**
    * bool $sendSalesRepAssignmentNotification
    */
-  private $sendSalesRepAssignmentNotification = true;
+  private $sendSalesRepAssignmentNotification = false;
 
   /**
    * @param String $firstName
