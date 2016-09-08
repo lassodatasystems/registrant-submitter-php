@@ -21,6 +21,7 @@
  "rating":"N",
  "sourceType":"Online Registration",
  "contactPreference":"Any",
+ "sendSalesRepAssignmentNotification": true,
  "addresses":[
    {
     "address":"350 Fifth Avenue",

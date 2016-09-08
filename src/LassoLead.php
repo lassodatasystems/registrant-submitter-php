@@ -90,6 +90,11 @@ class LassoLead
   private $followUpProcess = '';
 
   /**
+   * bool $sendSalesRepAssignmentNotification
+   */
+  private $sendSalesRepAssignmentNotification = false;
+
+  /**
    * @param String $firstName
    */
   public function setFirstName($firstName) {
@@ -198,6 +203,13 @@ class LassoLead
    */
   public function setFollowUpProcess($followUpProcess) {
       $this->followUpProcess = $followUpProcess;
+  }
+
+  /**
+   * Trigger an email notification to be sent to the assigned sales rep(s) upon successful registration.
+   */
+  public function sendAssignmentNotification() {
+      $this->sendSalesRepAssignmentNotification = true;
   }
 
   /**
