@@ -23,3 +23,21 @@ take a look at [lead.json](../master/lead.json), it is an example of the json bo
 note that in your POST request you will need to include a custom header
 
 X-Lasso-Auth: Token={apiKey},Version=1.0
+
+## Faceboook to Zapier integration with Python script
+
+1. Create an action using the **Code** app
+![Step 1](../master/resources/1-zapier.png)
+
+2. Select **Run Python**
+![Step 2](../master/resources/2-zapier.png)
+
+3. Edit Template and fill in data variables as shown
+**Note:** LassoUID, projectID, and clientID are obtainable from Project Admin -> View Registration Code
+![Step 3](../master/resources/3-zapier.png)
+
+4. Alternative way of filling in data variables from preset facebook data variables
+![Step 4](../master/resources/4-zapier.png)
+
+5. Place contents of [registrant-submitter-zapier.py](../master/src/registrant-submitter-zapier.py) into the **Code** section
+![Step 5](../master/resources/5-zapier.png)
