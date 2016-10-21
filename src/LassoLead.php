@@ -75,6 +75,16 @@ class LassoLead
   private $addresses = [];
 
   /**
+   * String $nameTitle
+   */
+  private $nameTitle = 'Mr';
+
+  /**
+   * String $company
+   */
+  private $company = 'Lasso';
+
+  /**
    * String $rating
    */
   private $rating = 'N';
@@ -83,6 +93,11 @@ class LassoLead
    * String $sourceType
    */
   private $sourceType = 'Online Registration';
+
+  /**
+   * String $secondarySourceType
+   */
+  private $secondarySourceType = 'Facebook';
 
   /**
    * String $followUpProcess
@@ -185,6 +200,20 @@ class LassoLead
   }
 
   /**
+   * @param String $nameTitle
+   */
+  public function setNameTitle($nameTitle) {
+      $this->nameTitle = $nameTitle;
+  }
+
+  /**
+   * @param String $company
+   */
+  public function setCompany($company) {
+      $this->company = $company;
+  }
+
+  /**
    * @param String $rating
    */
   public function setRating($rating) {
@@ -196,6 +225,13 @@ class LassoLead
    */
   public function setSourceType($sourceType) {
       $this->sourceType = $sourceType;
+  }
+
+  /**
+   * @param String $secondarySourceType
+   */
+  public function setSecondarySourceType($secondarySourceType) {
+      $this->secondarySourceType = $secondarySourceType;
   }
 
   /**

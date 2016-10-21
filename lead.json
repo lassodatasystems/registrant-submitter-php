@@ -18,8 +18,12 @@
    }
  ],
  "notes":["This is a test note"],
+ "nameTitle":"Mr",
+ "company":"Lasso",
  "rating":"N",
  "sourceType":"Online Registration",
+ "secondarySourceType":"Facebook",
+ "followUpProcess":"30 day follow up",
  "contactPreference":"Any",
  "sendSalesRepAssignmentNotification": true,
  "addresses":[
