@@ -24,6 +24,13 @@ note that in your POST request you will need to include a custom header
 
 X-Lasso-Auth: Token={apiKey},Version=1.0
 
+### Response Codes
+
+Code|What does that mean?
+----|----
+201|Your registrant was created in Lasso, Success
+302|There is an issue with security, double check the X-Lasso-Auth header
+
 ## Faceboook to Zapier integration with Python script
 
 1. Create an action using the **Code** app
