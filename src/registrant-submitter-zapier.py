@@ -54,6 +54,17 @@ json = {
                     'text': 'Lasso Daily'
                 }
             ]
+        },
+        {
+            'id': '34120',
+            'answers': [
+                {
+                    'id': '160302'
+                },
+                {
+                    'id': '160303'
+                }
+            ]
         }
     ],
     'nameTitle': input_data['nameTitle'],
