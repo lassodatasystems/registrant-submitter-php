@@ -45,6 +45,28 @@ json = {
     'notes': [
         input_data['note']
     ],
+    'questions': [
+        {
+            'path': 'Marketing',
+            'name': 'What magazines/newspapers do you like to read?',
+            'answers': [
+                {
+                    'text': 'Lasso Daily'
+                }
+            ]
+        },
+        {
+            'id': '34120',
+            'answers': [
+                {
+                    'id': '160302'
+                },
+                {
+                    'id': '160303'
+                }
+            ]
+        }
+    ],
     'nameTitle': input_data['nameTitle'],
     'company': input_data['company'],
     'rating': 'N',
