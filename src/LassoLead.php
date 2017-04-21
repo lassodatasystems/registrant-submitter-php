@@ -110,6 +110,16 @@ class LassoLead
   private $sendSalesRepAssignmentNotification = false;
 
   /**
+   * String $thankYouEmailTemplateId
+   */
+  private $thankYouEmailTemplateId = '';
+
+  /**
+   * bool $sendOptInEmail
+   */
+  private $sendOptInEmail = false;
+
+  /**
    * @param String $firstName
    */
   public function setFirstName($firstName) {
@@ -249,6 +259,20 @@ class LassoLead
   }
 
   /**
+   * Trigger an automatic thank you email to be sent to the registrant upon successful registration.
+   */
+  public function sendAutoReplyThankYouEmail($thankYouEmailTemplateId) {
+      $this->thankYouEmailTemplateId = $thankYouEmailTemplateId;
+  }
+
+    /**
+     * Trigger an opt-in email request to be sent to the registrant upon successful registration.
+     */
+    public function sendOptInEmail() {
+        $this->sendOptInEmail = true;
+    }
+
+    /**
    * @param String $firstName
    * @param String $lastName
    * @param Integer $projectId
