@@ -77,12 +77,12 @@ class LassoLead
   /**
    * String $nameTitle
    */
-  private $nameTitle = 'Mr';
+  private $nameTitle = '';
 
   /**
    * String $company
    */
-  private $company = 'Lasso';
+  private $company = '';
 
   /**
    * String $rating
@@ -97,7 +97,7 @@ class LassoLead
   /**
    * String $secondarySourceType
    */
-  private $secondarySourceType = 'Facebook';
+  private $secondarySourceType = '';
 
   /**
    * String $followUpProcess
@@ -118,6 +118,26 @@ class LassoLead
    * bool $sendOptInEmail
    */
   private $sendOptInEmail = false;
+
+  /**
+   * @var String $guid
+   */
+  private $guid = '';
+
+  /**
+   * @var String $domainAccountId;
+   */
+  private $domainAccountId = '';
+
+  /**
+   * @var Integer $ratingId
+   */
+  private $ratingId = '';
+
+  /**
+   * @var Array $notes
+   */
+  private $notes = '';
 
   /**
    * @param String $firstName
@@ -210,6 +230,20 @@ class LassoLead
   }
 
   /**
+   *  @param Integer $questionId
+   *  @param Mixed String|Array $answerId
+   */
+  public function answerQuestionById($questionId, $answerId){
+    $answers = is_array($answerId) ? array_map(function($id){ return ['id' => $id ]; } , $answerId) : [['id' => $answerId ]];
+    $this->questions[] = [
+        'id' => $questionId,
+        'path' => '',
+        'name' => '',
+        'answers' => $answers
+    ];
+  }
+
+  /**
    * @param String $nameTitle
    */
   public function setNameTitle($nameTitle) {
@@ -265,14 +299,37 @@ class LassoLead
       $this->thankYouEmailTemplateId = $thankYouEmailTemplateId;
   }
 
-    /**
-     * Trigger an opt-in email request to be sent to the registrant upon successful registration.
-     */
-    public function sendOptInEmail() {
-        $this->sendOptInEmail = true;
-    }
+  /**
+   * Trigger an opt-in email request to be sent to the registrant upon successful registration.
+   */
+  public function sendOptInEmail() {
+      $this->sendOptInEmail = true;
+  }
 
-    /**
+  /**
+   *  @param Integer $ratingId
+   */
+  public function setRatingId($ratingId){
+    $this->ratingId = $ratingId;
+  }
+
+  /**
+   * @param String $domainAccountId
+   * @param String $guid
+   */
+  public function setWebsiteTracking($domainAccountId, $guid) {
+    $this->domainAccountId = $domainAccountId;
+    $this->guid = $guid;
+  }
+
+  /**
+   * @param String $note
+   */
+  public function addNote($note){
+    $this->notes[] = $note;
+  }
+
+  /**
    * @param String $firstName
    * @param String $lastName
    * @param Integer $projectId
