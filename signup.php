@@ -36,9 +36,62 @@ $lead->addAddress($_REQUEST['address'],
     $_REQUEST['province'],
     $_REQUEST['postal'],
     $_REQUEST['country']);
-$lead->setRating('N');
+
 $lead->sendAssignmentNotification();
-$lead->addQuestion('\TheProject\Registration', 'How Heard', 'Newsletter');
+
+/**
+ * Notes
+ *
+ * Added during submission by using the following
+ *
+ * $lead->addNote("I would like this comment recorded");
+ */
+
+/**
+ * Rating
+ *
+ * Submitted as a string or using the ratingId
+ *
+ * $lead->setRating('N');
+ *
+ * $lead->setRatingId(1);
+ */
+
+/**
+ * Website Tracking
+ *
+ * Associated with the submission as follows
+ * tracking must be installed on the site and the value from the tracking
+ * javascript LassoCRM.tracker.readCookie("ut");
+ *
+ * $lead->setWebsiteTracking("LAS-130457-02", "8FD6985D-D82C-4D4A-AF21-69989C933959");
+ */
+
+
+/**
+ * Questions
+ *
+ * Submitted either using string or ids
+ *
+ * Passing in a folder path will create the question if it does not exist. Note
+ * that if the folder is moved in Lasso it will recreate it if the submissions
+ * path is not updated as well
+ *
+ * $lead->addQuestion('\TheProject\Registration', 'How Heard', 'Newsletter');
+ *
+ * Questions can be answered by Id by setting questionId and answerId or Ids
+ * $lead->answerQuestionById(2, [5,6]);
+ * $lead->answerQuestionById(1, 2);
+ */
+
+/**
+ * Auto Replay Emails
+ *
+ * The auto reply email content can be specified by passing in a templateId
+ * with the submission.
+ *
+ * $lead->sendAutoReplyThankYouEmail($templateId);
+ */
 
 $submitter = new RegistrantSubmitter();
 $curl      = $submitter->submit('https://api.lassocrm.com/registrants', $lead, $apiKey);
