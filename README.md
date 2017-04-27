@@ -24,6 +24,8 @@ note that in your POST request you will need to include a custom header
 
 X-Lasso-Auth: Token={apiKey},Version=1.0
 
+Once you have your json formatted submit your leads to https://api.lassocrm.com/registrants
+
 ### Response Codes
 
 Code|What does that mean?
