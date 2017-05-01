@@ -29,7 +29,7 @@
  "followUpProcess":"30 day follow up",
  "contactPreference":"Any",
  "sendSalesRepAssignmentNotification": true,
- "thankYouEmailTemplateId": ""
+ "thankYouEmailTemplateId": "",
  "addresses":[
    {
     "address":"350 Fifth Avenue",
