@@ -74,7 +74,8 @@ json = {
     'secondarySourceType': 'Facebook',
     'followUpProcess': '30-day follow up',
     'contactPreference': 'Any',
-    'sendSalesRepAssignmentNotification': True
+    'sendSalesRepAssignmentNotification': True,
+    'thankYouEmailTemplateId': '155'
 }
 
 r = requests.post(url, json=json, headers=headers)
