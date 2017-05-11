@@ -10,6 +10,7 @@ class RegistrantSubmitter
     curl_setopt($curl, CURLOPT_HEADER, 'application/json');
     curl_setopt($curl, CURLOPT_URL, $location);
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($lead->toArray()));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
       'X-Lasso-Auth:'. 'Token='. $apiKey . ',Version=1.0',
     ));
