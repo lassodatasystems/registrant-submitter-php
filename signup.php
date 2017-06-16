@@ -83,7 +83,7 @@ $lead->sendAssignmentNotification();
  * $lead->answerQuestionById(2, [5,6]);
  * $lead->answerQuestionById(1, 2);
  *
- * Free form text questions an be answered by passing the questionId and an answer string
+ * Free form text questions can be answered by passing the questionId and an answer string
  * $lead->answerQuestionByIdForText($questionId, $answerText);
  */
 
