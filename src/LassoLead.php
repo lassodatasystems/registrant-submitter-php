@@ -231,7 +231,7 @@ class LassoLead
 
   /**
    *  @param Integer $questionId
-   *  @param Mixed String|Array $answerId
+   *  @param Mixed Integer|Array $answerId
    */
   public function answerQuestionById($questionId, $answerId){
     $answers = is_array($answerId) ? array_map(function($id){ return ['id' => $id ]; } , $answerId) : [['id' => $answerId ]];
@@ -240,6 +240,20 @@ class LassoLead
         'path' => '',
         'name' => '',
         'answers' => $answers
+    ];
+  }
+
+  /**
+   *  @param Integer $questionId
+   *  @param String $answerText
+   */
+  public function answerQuestionByIdForText($questionId, $answerText){
+    $this->questions[] = [
+        'id' => $questionId,
+        'path' => '',
+        'name' => '',
+        'answers' => [['id' => '',
+                      'text' => $answerText]]
     ];
   }
 

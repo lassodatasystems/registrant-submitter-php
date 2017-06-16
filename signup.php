@@ -82,6 +82,9 @@ $lead->sendAssignmentNotification();
  * Questions can be answered by Id by setting questionId and answerId or Ids
  * $lead->answerQuestionById(2, [5,6]);
  * $lead->answerQuestionById(1, 2);
+ *
+ * Free form text questions an be answered by passing the questionId and an answer string
+ * $lead->answerQuestionByIdForText($questionId, $answerText);
  */
 
 /**
