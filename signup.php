@@ -96,6 +96,15 @@ $lead->sendAssignmentNotification();
  * $lead->sendAutoReplyThankYouEmail($templateId);
  */
 
+/**
+ * Sales Rep Rotation
+ * 
+ * By passing in a rotationId a specific group of sales people can be assigned
+ * the registrants that are submitted
+ *
+ * $lead->setRotationId($rotationId);
+ */
+
 $submitter = new RegistrantSubmitter();
 $curl      = $submitter->submit('https://api.lassocrm.com/registrants', $lead, $apiKey);
 

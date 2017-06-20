@@ -135,6 +135,11 @@ class LassoLead
   private $ratingId = '';
 
   /**
+   * @var Integer $rotationId
+   */
+  private $rotationId = '';
+
+  /**
    * @var Array $notes
    */
   private $notes = '';
@@ -325,6 +330,13 @@ class LassoLead
    */
   public function setRatingId($ratingId){
     $this->ratingId = $ratingId;
+  }
+
+  /**
+   *  @param Integer $rotationId
+   */
+  public function setRotationId($rotationId){
+    $this->rotationId = $rotationId;
   }
 
   /**
