@@ -1,4 +1,12 @@
-# Registering via cUrl using PHP
+# ~~Registering via cUrl using PHP~~ (Deprecated)
+
+### January 2018: This API is no longer supported
+
+You may continue to use this library as is. Lasso will not be removing features already defined in this API, nor will any new features be added. 
+
+Lasso has a new RESTful API to manage registrants: https://lassodatasystems.github.io/lasso-api/
+
+Please contact your client representative to get setup: http://www.lassocrm.com/contact-us
 
 ### Using PHP
 

@@ -1,0 +1,8 @@
+{
+  "name": "lassodatasystems/registrant-submitter-php",
+  "autoload": {
+    "psr-0" : {
+      "LassoDataSystems\\RegistrantSubmitter" : "src"
+    }
+  }
+}
