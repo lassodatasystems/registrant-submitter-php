@@ -1,12 +1,4 @@
-# ~~Registering via cUrl using PHP~~ (Deprecated)
-
-### January 2018: This API is no longer supported
-
-You may continue to use this library as is. Lasso will not be removing features already defined in this API, nor will any new features be added. 
-
-Lasso has a new RESTful API to manage registrants: https://lassodatasystems.github.io/lasso-api/
-
-Please contact your client representative to get setup: http://www.lassocrm.com/contact-us
+# Registering via cUrl using PHP
 
 ### Using PHP
 
@@ -28,7 +20,7 @@ and re-trying your submission.
 
 take a look at [lead.json](../master/lead.json), it is an example of the json body you will need to submit.
 
-note that in your POST request you will need to include a custom header
+note that in your POST request you will need to nclude a custom header
 
 X-Lasso-Auth: Token={apiKey},Version=1.0
 
