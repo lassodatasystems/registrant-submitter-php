@@ -20,7 +20,7 @@ and re-trying your submission.
 
 take a look at [lead.json](../master/lead.json), it is an example of the json body you will need to submit.
 
-note that in your POST request you will need to nclude a custom header
+note that in your POST request you will need to include a custom header
 
 X-Lasso-Auth: Token={apiKey},Version=1.0
 
