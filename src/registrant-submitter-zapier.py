@@ -6,7 +6,7 @@ projectId = input_data['projectID']
 # clientId = '123'
 # projectId = '456'
 
-url = 'https://api.lassocrm.com/registrants'
+url = 'https://app.lassocrm.com/registrants'
 
 headers = {'X-Lasso-Auth': 'Token=' + input_data['LassoUID'] + ', Version=1.0'}
 # alternatively, if  the auth token is not passed in as input, it can be hardcoded like this:
