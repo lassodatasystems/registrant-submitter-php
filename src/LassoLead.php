@@ -142,7 +142,7 @@ class LassoLead
   /**
    * @var Array $notes
    */
-  private $notes = '';
+  private $notes = [];
 
   /**
    * @param String $firstName
