@@ -11,6 +11,8 @@ class RegistrantSubmitter
     curl_setopt($curl, CURLOPT_URL, $location);
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($lead->toArray()));
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    // Uncomment the code below if website does not have SSL certificate
+    //curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
       'Content-Type: application/json',
       'X-Lasso-Auth:'. 'Token='. $apiKey . ',Version=1.0',
